@@ -72,15 +72,8 @@ To install devDependencies & dependencies
     }
   }
 
-## Token and Authentication
-
-Authorization   Bearer <token>
-
-## jasmine and testing 
-    use - npm run tests -
-
 ## Database schema 
-
+```
 TABLE users (
     id SERIAL PRIMARY KEY,
     firstname VARCHAR(255) NOT NULL,
@@ -88,23 +81,34 @@ TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     password_digest VARCHAR
 )
-
-  
+```
+```  
 TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(64) NOT NULL,
     price integer NOT NULL
 )
-  
+```
+```
 TABLE orders (
     id SERIAL PRIMARY KEY,
     status VARCHAR(15),
     user_id bigint REFERENCES users(id)
 )
-   
+```
+```   
 TABLE order_products (
     id SERIAL PRIMARY KEY,
     quantity integer,
     order_id bigint REFERENCES orders(id),
     product_id bigint REFERENCES products(id)
 )
+```
+
+## Authentication
+
+Authorization   Bearer token
+
+## jasmine and testing 
+    use - npm run tests -
+
