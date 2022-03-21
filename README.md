@@ -1,8 +1,50 @@
 # Storefront Backend Project
+Build a JavaScript backend API in Nodejs for an online store. It exposes a RESTful API that will be used by the frontend developer on the frontend, also have written test, secured user information with encryption, and provide tokens for integration into the frontend. 
 
-## Dependencies  Instructions
+## Installation Instructions
 To install devDependencies & dependencies
  type => npm i
+
+ ## .env 
+    POSTGRES_HOST=127.0.0.1
+    POSTGRES_DB=store
+    POSTGRES_DB_TEST=store_test
+    DB_PORT = 5432
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=1234
+    ENV=dev
+    BCRYPT_PASSWORD=your-secret-password
+    SALT_ROUNDS=10
+    TOKEN_SECRET=zamalek2022
+
+## Authentication
+
+Authorization Bearer token
+
+## jasmine and testing 
+    use - npm run tests -
+## Starting the Server
+
+    use - npm run watch -
+
+## Database and Migrations
+the Database used in the project was Postgres database
+### to install database packages by yourself 
+#### npm i pg
+#### npm i db-migrate db-migrate-pg 
+### connecting to the database using sql shell (psql) and log by default user 
+(psql -U postgres)
+### And running on Port 
+5432
+### or creat a new user by typing  
+CREATE USER first_user WITH PASSWORD '1234';
+### create dev & test database = > 
+    CREATE DATABASE store;
+    CREATE DATABASE store_test;
+### finally run 
+(db:migarte up) 
+
+
 ## Scripts of project
 
     "build": "npx tsc",
@@ -36,17 +78,6 @@ To install devDependencies & dependencies
      Get  [/users/:id]
      Post [/orders/:id/products]
 
-
-## .env 
-    POSTGRES_HOST=127.0.0.1
-    POSTGRES_DB=store
-    POSTGRES_DB_TEST=store_test
-    POSTGRES_USER=postgres
-    POSTGRES_PASSWORD=1234
-    ENV=dev
-    BCRYPT_PASSWORD=your-secret-password
-    SALT_ROUNDS=10
-    TOKEN_SECRET=zamalek2022
 
 ## Database config 
     {
@@ -108,10 +139,4 @@ TABLE order_products (
 )
 ```
 
-## Authentication
-
-Authorization   Bearer token
-
-## jasmine and testing 
-    use - npm run tests -
 
