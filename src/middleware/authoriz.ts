@@ -14,7 +14,8 @@ const {
     try {
         const authorizationHeader = req.headers.authorization as string
         const token = authorizationHeader.split(' ')[1]
-        const decoded = jwt.verify(token, tokenSecret)
+         jwt.verify(token, tokenSecret)
+       
     } catch (error) {
         res.status(401)
         res.json('Access denied, invalid token')

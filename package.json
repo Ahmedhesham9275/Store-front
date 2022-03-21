@@ -31,8 +31,10 @@
   },
   "devDependencies": {
     "@types/jasmine": "^3.10.3",
+    "@types/supertest": "^2.0.11",
     "jasmine": "^4.0.2",
     "jasmine-spec-reporter": "^7.0.0",
+    "supertest": "^6.2.2",
     "ts-node": "^10.7.0",
     "tsc-watch": "^4.6.2"
   }

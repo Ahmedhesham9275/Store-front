@@ -55,6 +55,7 @@ To install devDependencies & dependencies
       "host": "127.0.0.1",
       "database":"store",
       "user": "postgres",
+      "port": "5432",
       "password": "1234"
     },
     "test": {
@@ -62,12 +63,14 @@ To install devDependencies & dependencies
         "host": "127.0.0.1",
         "database":"store_test",
         "user": "postgres",
+        "port": "5432",
         "password": "1234"
     },
     "create": {
       "driver": "pg",
       "host": "127.0.0.1",
       "user": "postgres",
+      "port": "5432",
       "password": "1234"
     }
   }

@@ -1,23 +1,14 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import usersRoutes from './handlers/users';
-import ProductsRoutes from './handlers/products';
-import ordersRoutes from './handlers/orders';
+import app from './app';
+import { truncDb } from './middleware/resetdb';
 
 
 
 //\pset pager off
 
-
-const app: express.Application = express()
-
 const address: string = "0.0.0.0:3000"
 
-app.use(bodyParser.json())
+//const rest= truncDb();
 
-ordersRoutes(app);
-ProductsRoutes(app);
-usersRoutes(app);
 
 app.listen(3000, function () {
     console.log(`starting app on port : ${address}`)
