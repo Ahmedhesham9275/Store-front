@@ -41,5 +41,17 @@ describe('testing user store', () => {
 
   });
 
+  it('Destroy method should remove a user with given id', async () => {
+    const removeUser = {
+      id : "1"
+    }
+    const token: string = await testUser() as unknown as string;
+    const result = await request.delete("/users/")
+      .set({ Authorization: 'Bearer ' + token })
+      .send(removeUser)
+    expect(result.statusCode).toEqual(200);
+
+  });
+
 
 })

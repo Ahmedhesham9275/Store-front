@@ -47,6 +47,21 @@ it('show method should return a current order with given id', async () => {
   expect(result.statusCode).toEqual(200);
 });
 
+
+it('Destroy method should remove a order with given id', async () => {
+  await truncDb();
+  const removeOrder = {
+    id : "1"
+  }
+  const token: string = await testUser() as unknown as string;
+  const result = await request.delete("/orders/")
+    .set({ Authorization: 'Bearer ' + token })
+    .send(removeOrder)
+  expect(result.statusCode).toEqual(200);
+
+});
+
+
 it('add method should add a product with given id to given order', async () => {
   //reset tables
   await truncDb();
@@ -56,6 +71,8 @@ it('add method should add a product with given id to given order', async () => {
     status: "active",
     user_id: "1"
   }
+
+  
   //create order
   const order = await request.post("/orders").set({ Authorization: 'Bearer ' + token })
     .send(newOrder)

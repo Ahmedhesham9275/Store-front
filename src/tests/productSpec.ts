@@ -34,4 +34,16 @@ describe('testing product store', () => {
         expect(result.statusCode).toEqual(200);
     });
 
+    it('Destroy method should remove a product with given id', async () => {
+        const removeProduct = {
+          id : "1"
+        }
+        const token: string = await testUser() as unknown as string;
+        const result = await request.delete("/products/")
+          .set({ Authorization: 'Bearer ' + token })
+          .send(removeProduct)
+        expect(result.statusCode).toEqual(200);
+    
+      });
+
 })
