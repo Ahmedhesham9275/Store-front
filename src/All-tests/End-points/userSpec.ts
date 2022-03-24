@@ -1,8 +1,8 @@
 import supertest from 'supertest';
-import app from '../app';
-import { User, UserStore } from "../models/user";
-import { testUser } from '../middleware/testing-utilis';
-import { truncDb } from '../middleware/resetdb';
+import app from '../../app';
+import { User, UserStore } from "../../models/user";
+import { testUser } from '../../middleware/testing-utilis';
+import { truncDb } from '../../middleware/resetdb';
 
 const request = supertest(app);
 
